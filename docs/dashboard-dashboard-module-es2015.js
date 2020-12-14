@@ -4756,7 +4756,7 @@ function DashboardComponent_div_18_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "li");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "h6", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "i", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\u0413\u043E\u043B\u043E\u0441\u0443\u0432\u0430\u043D\u043D\u044F ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\u041D\u043E\u0432\u0438\u043D\u0438 ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -4820,8 +4820,9 @@ class DashboardComponent {
     }
     ngAfterViewInit() { }
     ngOnInit() {
+        var _a;
         let min = 1;
-        let max = 4;
+        let max = 13;
         for (let index = 0; index < 23; index++) {
             let randomImageId = (Math.random() * (max - min) + min).toString().split('.')[0];
             let item = new NewItem();
@@ -4830,6 +4831,15 @@ class DashboardComponent {
             item.imageUrl = `assets/images/background/test/test-${randomImageId}.jpg`;
             item.subtitle = "Презентация";
             item.title = "Херсон в смартфоні - для жителів створили новий додаток";
+            if (index !== 0 && this.news.length !== 0) {
+                let prevElt = this.news[index - 1];
+                let prevImageID = (_a = prevElt.imageUrl) === null || _a === void 0 ? void 0 : _a.split('-')[1].split('.')[0];
+                let newImageId = prevImageID;
+                while (prevImageID === newImageId) {
+                    newImageId = (Math.random() * (max - min) + min).toString().split('.')[0];
+                }
+                item.imageUrl = `assets/images/background/test/test-${newImageId}.jpg`;
+            }
             this.news.push(item);
         }
     }
@@ -4852,7 +4862,7 @@ DashboardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041C\u043E\u0439 \u0433\u043E\u0440\u043E\u0434");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041C\u043E\u0454 \u043C\u0456\u0441\u0442\u043E");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h1", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "\u0425\u0435\u0440\u0441\u043E\u043D");
@@ -4865,7 +4875,7 @@ DashboardComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h1");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "\u041D\u043E\u0432\u043E\u0441\u0442\u0438 \u0438 \u0430\u0444\u0438\u0448\u0430");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "\u041D\u043E\u0432\u0438\u043D\u0438 \u0442\u0430 \u0430\u0444\u0456\u0448\u0430");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 7);

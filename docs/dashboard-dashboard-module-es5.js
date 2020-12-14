@@ -4862,7 +4862,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "i", 16);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\u0413\u043E\u043B\u043E\u0441\u0443\u0432\u0430\u043D\u043D\u044F ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "\u041D\u043E\u0432\u0438\u043D\u0438 ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -4947,8 +4947,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ngOnInit",
         value: function ngOnInit() {
+          var _a;
+
           var min = 1;
-          var max = 4;
+          var max = 13;
 
           for (var index = 0; index < 23; index++) {
             var randomImageId = (Math.random() * (max - min) + min).toString().split('.')[0];
@@ -4958,6 +4960,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             item.imageUrl = "assets/images/background/test/test-".concat(randomImageId, ".jpg");
             item.subtitle = "Презентация";
             item.title = "Херсон в смартфоні - для жителів створили новий додаток";
+
+            if (index !== 0 && this.news.length !== 0) {
+              var prevElt = this.news[index - 1];
+              var prevImageID = (_a = prevElt.imageUrl) === null || _a === void 0 ? void 0 : _a.split('-')[1].split('.')[0];
+              var newImageId = prevImageID;
+
+              while (prevImageID === newImageId) {
+                newImageId = (Math.random() * (max - min) + min).toString().split('.')[0];
+              }
+
+              item.imageUrl = "assets/images/background/test/test-".concat(newImageId, ".jpg");
+            }
+
             this.news.push(item);
           }
         }
@@ -5001,7 +5016,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h1");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041C\u043E\u0439 \u0433\u043E\u0440\u043E\u0434");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "\u041C\u043E\u0454 \u043C\u0456\u0441\u0442\u043E");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5027,7 +5042,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h1");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "\u041D\u043E\u0432\u043E\u0441\u0442\u0438 \u0438 \u0430\u0444\u0438\u0448\u0430");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "\u041D\u043E\u0432\u0438\u043D\u0438 \u0442\u0430 \u0430\u0444\u0456\u0448\u0430");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 

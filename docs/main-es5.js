@@ -571,19 +571,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u041D\u043E\u0432\u043E\u0441\u0442\u0438");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u041D\u043E\u0432\u0438\u043D\u0438");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "\u041E \u043F\u0440\u043E\u0435\u043A\u0442\u0435");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "\u041F\u0440\u043E \u043F\u0440\u043E\u0435\u043A\u0442");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "li", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "\u0412\u043E\u0439\u0442\u0438");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "\u0423\u0432\u0456\u0439\u0442\u0438");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
