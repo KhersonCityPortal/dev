@@ -410,13 +410,19 @@ class FullComponent {
         this._mobileQueryListener = () => changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
     }
+    ngOnInit() {
+        this.InitScrollEventHandler();
+    }
+    InitScrollEventHandler() {
+    }
+    ngAfterViewInit() {
+    }
     ngOnDestroy() {
         this.mobileQuery.removeListener(this._mobileQueryListener);
     }
-    ngAfterViewInit() { }
 }
 FullComponent.ɵfac = function FullComponent_Factory(t) { return new (t || FullComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__["MediaMatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_shared_menu_items_menu_items__WEBPACK_IMPORTED_MODULE_2__["MenuItems"])); };
-FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: FullComponent, selectors: [["app-full-layout"]], decls: 19, vars: 0, consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], [1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap"]], template: function FullComponent_Template(rf, ctx) { if (rf & 1) {
+FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: FullComponent, selectors: [["app-full-layout"]], decls: 19, vars: 0, consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], [1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap", "main-container-js"]], template: function FullComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -1090,7 +1096,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\shala\Documents\GitHub\MyCity\WebSite\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\main.ts */"./src/main.ts");
 
 
 /***/ })

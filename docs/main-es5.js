@@ -529,13 +529,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(FullComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.InitScrollEventHandler();
+        }
+      }, {
+        key: "InitScrollEventHandler",
+        value: function InitScrollEventHandler() {}
+      }, {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {}
+      }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
           this.mobileQuery.removeListener(this._mobileQueryListener);
         }
-      }, {
-        key: "ngAfterViewInit",
-        value: function ngAfterViewInit() {}
       }]);
 
       return FullComponent;
@@ -550,7 +558,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-full-layout"]],
       decls: 19,
       vars: 0,
-      consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], [1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap"]],
+      consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], [1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap", "main-container-js"]],
       template: function FullComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -1892,7 +1900,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\WebSite\src\main.ts */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\main.ts */
     "./src/main.ts");
     /***/
   }
