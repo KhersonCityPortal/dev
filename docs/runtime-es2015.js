@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"dashboard-dashboard-module":"dashboard-dashboard-module","material-component-material-module":"material-component-material-module"}[chunkId]||chunkId) + "-es2015.js"
+/******/ 		return __webpack_require__.p + "" + ({"dashboard-dashboard-module":"dashboard-dashboard-module","firebase-auth":"firebase-auth","material-component-material-module":"material-component-material-module"}[chunkId]||chunkId) + "-es2015.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
