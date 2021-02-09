@@ -23,6 +23,7 @@ Global Styles
 * {
     outline: none;
     box-sizing:border-box;
+    background-color: #f3f8f9;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
 html {
     position: relative;
     min-height: 100%;
-    background: $white;
+    // background: $white;
 }
 a:hover, a:focus, a{
     text-decoration: none;
@@ -297,6 +298,10 @@ Margin
 html body {
 .m-0 {
     margin: 0px;
+}
+
+.m-l-0 {
+    margin-left: 0px;
 }
 
 .m-l-5 {
