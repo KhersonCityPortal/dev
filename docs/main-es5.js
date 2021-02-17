@@ -468,7 +468,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               _this2.firestore.collection('global_news').get().subscribe(function (fireItem) {
                 fireItem.docs.forEach(function (item) {
-                  var el = _this2.ParseFirebaseItem(item.data(), item.id);
+                  var el = _this2.parseFirebaseItem(item.data(), item.id);
 
                   fireNews.push(el);
                 });
@@ -476,6 +476,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 _this2.dataProviderHelper.init(fireNews);
 
                 console.log("🌐 firebase: got global_news");
+                console.log(fireNews);
                 resolve("Success!");
               });
             });
@@ -525,29 +526,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.dataProviderHelper.init(fireNews);
         }
       }, {
-        key: "ParseFirebaseItem",
-        value: function ParseFirebaseItem(itemData, id) {
-          console.log(itemData);
-          var item = {
-            fullText: itemData.info,
-            shortText: "".concat(itemData.info.substring(0, 20), " ..."),
-            imageUrl: itemData.image_f_url[0] == undefined ? "assets/images/background/post-icon.svg" : itemData.image_f_url[0],
-            images: itemData.image_f_url,
+        key: "parseFirebaseItem",
+        value: function parseFirebaseItem(item, id) {
+          console.log("⚪ fire db item: ", item);
+          console.log("_________\n\n");
+          var model = {
+            fullText: item.info,
+            shortText: "".concat(item.info.substring(0, 120), " ..."),
+            imageUrl: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
+            images: item.image_f_url,
             subtitle: "",
-            title: itemData.name,
+            title: item.name,
             id: id,
-            category: itemData.category,
-            categoryName: itemData.category_name,
-            date: new Date(itemData.date.seconds),
-            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(itemData.date.seconds),
+            category: item.category,
+            categoryName: item.category_name,
+            date: new Date(item.date.seconds),
+            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(item.date.seconds),
             // dateViewModel: formatDate(new Date(itemData.date.seconds), 'yyyy-MM-dd', 'en-US'),
-            image_F_Url: itemData.image_f_url[0] == undefined ? "assets/images/background/post-icon.svg" : itemData.image_f_url[0],
-            info: itemData.info,
-            likes: itemData.likes,
-            name: itemData.name,
-            views: itemData.views
+            image_F_Url: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
+            info: item.info,
+            likes: item.likes,
+            name: item.name,
+            views: item.views,
+            price: item.price,
+            site: item.site,
+            street: item.street,
+            time: item.time
           };
-          return item;
+          return model;
         }
       }, {
         key: "getById",
@@ -703,7 +709,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DataProviderExtension, null, [{
         key: "dateTimeToUkrainianString",
         value: function dateTimeToUkrainianString(miliseconds) {
-          var d = new Date(miliseconds);
+          var d = new Date(miliseconds * 1000);
           var cDay = d.getDate();
           var cYear = d.getFullYear();
           var cMonth = this.monthNamesUK[d.getMonth()];
@@ -2336,7 +2342,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\main.ts */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\src\main.ts */
     "./src/main.ts");
     /***/
   }

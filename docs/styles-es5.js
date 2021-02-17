@@ -587,15 +587,15 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\node_modules\chartist\dist\chartist.css */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\node_modules\chartist\dist\chartist.css */
     "./node_modules/chartist/dist/chartist.css");
 
     __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\styles.css */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\src\styles.css */
     "./src/styles.css");
 
     module.exports = __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\assets\styles\style.scss */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\src\assets\styles\style.scss */
     "./src/assets/styles/style.scss");
     /***/
   }
