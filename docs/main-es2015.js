@@ -96,7 +96,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/fire/database */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-database.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
-/* harmony import */ var _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./data-provider/data-provider.service */ "./src/app/data-provider/data-provider.service.ts");
+/* harmony import */ var _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/data-provider/data-provider.service */ "./src/app/services/data-provider/data-provider.service.ts");
+/* harmony import */ var _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/firebaseDynamicLink.service */ "./src/app/services/firebaseDynamicLink.service.ts");
+/* harmony import */ var angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! angularx-qrcode */ "./node_modules/angularx-qrcode/__ivy_ngcc__/fesm2015/angularx-qrcode.js");
+/* harmony import */ var _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/script-loader.service */ "./src/app/services/script-loader.service.ts");
+
+
+
 
 
 
@@ -131,8 +137,11 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             useClass: _angular_common__WEBPACK_IMPORTED_MODULE_5__["HashLocationStrategy"]
         },
         _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"],
-        _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"]
+        _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"],
+        _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__["FirebaseDynamicLinkService"],
+        _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__["ScriptLoaderService"]
     ], imports: [[
+            angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
@@ -149,7 +158,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_9__["FullComponent"],
         _layouts_full_header_header_component__WEBPACK_IMPORTED_MODULE_10__["AppHeaderComponent"],
         _shared_spinner_component__WEBPACK_IMPORTED_MODULE_15__["SpinnerComponent"],
-        _layouts_full_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["AppSidebarComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
+        _layouts_full_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["AppSidebarComponent"]], imports: [angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"],
+        _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
         _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
         _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"],
@@ -168,6 +178,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _layouts_full_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["AppSidebarComponent"],
                 ],
                 imports: [
+                    angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"],
                     _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
@@ -186,7 +197,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                         useClass: _angular_common__WEBPACK_IMPORTED_MODULE_5__["HashLocationStrategy"]
                     },
                     _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"],
-                    _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"]
+                    _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"],
+                    _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__["FirebaseDynamicLinkService"],
+                    _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__["ScriptLoaderService"]
                 ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
             }]
@@ -228,236 +241,6 @@ const AppRoutes = [
         ]
     }
 ];
-
-
-/***/ }),
-
-/***/ "./src/app/data-provider/data-provider.service.ts":
-/*!********************************************************!*\
-  !*** ./src/app/data-provider/data-provider.service.ts ***!
-  \********************************************************/
-/*! exports provided: DataProviderService, DataProviderHelper */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderService", function() { return DataProviderService; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderHelper", function() { return DataProviderHelper; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
-/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
-/* harmony import */ var _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dataProviderExtension.service */ "./src/app/data-provider/dataProviderExtension.service.ts");
-
-
-
-
-
-
-
-class DataProviderService {
-    constructor(firestore, afAuth) {
-        this.firestore = firestore;
-        this.afAuth = afAuth;
-        // private fireNews: any = [];
-        this.initialized = false;
-        this.dataProviderHelper = new DataProviderHelper();
-    }
-    init() {
-        let promise = new Promise((resolve, reject) => {
-            if (this.initialized) {
-                console.log("DataProviderService ready");
-                resolve("Success!");
-                return;
-            }
-            console.log("💥 DataProviderService init start");
-            this.initFirebaseAnonimus().then((res => {
-                resolve("Success!");
-                this.initialized = true;
-            }));
-        });
-        return promise;
-    }
-    initFirebaseAnonimus() {
-        let promise = new Promise((resolve, reject) => {
-            this.afAuth.signInAnonymously().then(() => {
-                console.log("✅ firebase initialized");
-                let fireNews = [];
-                this.firestore.collection('global_news').get().subscribe(fireItem => {
-                    fireItem.docs.forEach((item) => {
-                        var el = this.parseFirebaseItem(item.data(), item.id);
-                        fireNews.push(el);
-                    });
-                    this.dataProviderHelper.init(fireNews);
-                    console.log("🌐 firebase: got global_news");
-                    console.log(fireNews);
-                    resolve("Success!");
-                });
-            });
-        });
-        return promise;
-    }
-    initTestData() {
-        let fireNews = [];
-        for (let index = 0; index < 10; index++) {
-            var d1 = {
-                fullText: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.`,
-                shortText: `тестhh\nN\nM\nM\nUu\nU\nJ\n ..`,
-                imageUrl: `assets/images/background/post-icon.svg`,
-                images: [`assets/images/background/post-icon.svg`],
-                subtitle: "",
-                title: `Тест новость ${index}`,
-                id: index.toString(),
-                category: "Tw9CypPH0HU9MGVOp8S1",
-                categoryName: "Освітні події",
-                date: new Date("1970-01-19"),
-                dateViewModel: "1970-01-19",
-                image_F_Url: `assets/images/background/post-icon.svg`,
-                info: "тестhh\nN\nM\nM\nUu\nU\nJ\nJj\nJ\nJ\nJ\nJhu\nUyy\nYjh\nHh\nHhh\nH\n\nHh\nHhh\n\nH\nH\nH\nH\nHh\n\nH\nH\nH\nH",
-                likes: 1,
-                name: "тест новость",
-                views: 3
-            };
-            if (index === 1) {
-                d1.imageUrl = `assets/images/background/test/test-1.jpg`;
-                d1.images = [`assets/images/background/test/test-1.jpg`,
-                    `assets/images/background/test/test-2.jpg`];
-                d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
-            }
-            if (index === 2) {
-                d1.imageUrl = `assets/images/background/test/test-8.jpg`;
-                d1.images = [`assets/images/background/test/test-1.jpg`,
-                    `assets/images/background/test/test-2.jpg`,
-                    `assets/images/background/test/test-3.jpg`,
-                    `assets/images/background/test/test-8.jpg`,];
-                d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
-            }
-            fireNews.push(d1);
-        }
-        this.dataProviderHelper.init(fireNews);
-    }
-    parseFirebaseItem(item, id) {
-        console.log("⚪ fire db item: ", item);
-        console.log("_________\n\n");
-        let model = {
-            fullText: item.info,
-            shortText: `${item.info.substring(0, 120)} ...`,
-            imageUrl: item.image_f_url[0] == undefined ?
-                `assets/images/background/default.jpg` : item.image_f_url[0],
-            images: item.image_f_url,
-            subtitle: "",
-            title: item.name,
-            id: id,
-            category: item.category,
-            categoryName: item.category_name,
-            date: new Date(item.date.seconds),
-            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(item.date.seconds),
-            // dateViewModel: formatDate(new Date(itemData.date.seconds), 'yyyy-MM-dd', 'en-US'),
-            image_F_Url: item.image_f_url[0] == undefined ?
-                `assets/images/background/default.jpg` : item.image_f_url[0],
-            info: item.info,
-            likes: item.likes,
-            name: item.name,
-            views: item.views,
-            price: item.price,
-            site: item.site,
-            street: item.street,
-            time: item.time
-        };
-        return model;
-    }
-    getById(id) {
-        let promise = new Promise((resolve, reject) => {
-            if (!this.initialized) {
-                this.init().then(() => {
-                    resolve(this.dataProviderHelper.getById(id));
-                });
-                return;
-            }
-            let result = this.dataProviderHelper.getById(id);
-            resolve(result);
-        });
-        return promise;
-    }
-    getAll() {
-        let promise = new Promise((resolve, reject) => {
-            if (!this.initialized) {
-                this.init().then(() => {
-                    resolve(this.dataProviderHelper.getAll());
-                });
-                return;
-            }
-            resolve(this.dataProviderHelper.getAll());
-        });
-        return promise;
-    }
-    getPagedArticles(skip, take) {
-        return this.dataProviderHelper.getPagedArticles(skip, take);
-    }
-    uuidv4() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
-}
-DataProviderService.ɵfac = function DataProviderService_Factory(t) { return new (t || DataProviderService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"])); };
-DataProviderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DataProviderService, factory: DataProviderService.ɵfac });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataProviderService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }, { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"] }]; }, null); })();
-class DataProviderHelper {
-    constructor() {
-        this.data = [];
-    }
-    init(data) {
-        if (!data)
-            return;
-        this.data = data;
-    }
-    getById(id) {
-        let result;
-        let article = this.data.find((x) => { return x.id === id; });
-        if (article)
-            result = { success: true, item: article };
-        else
-            result = { success: false, item: article };
-        return result;
-    }
-    getPagedArticles(skip, take) {
-        return this.data.slice(skip, take);
-    }
-    getAll() {
-        return this.data;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/data-provider/dataProviderExtension.service.ts":
-/*!****************************************************************!*\
-  !*** ./src/app/data-provider/dataProviderExtension.service.ts ***!
-  \****************************************************************/
-/*! exports provided: DataProviderExtension */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderExtension", function() { return DataProviderExtension; });
-class DataProviderExtension {
-    static dateTimeToUkrainianString(miliseconds) {
-        let d = new Date(miliseconds * 1000);
-        let cDay = d.getDate();
-        let cYear = d.getFullYear();
-        let cMonth = this.monthNamesUK[d.getMonth()];
-        return `${cDay} ${cMonth} ${cYear}p.`;
-    }
-}
-DataProviderExtension.monthNamesEN = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-];
-DataProviderExtension.monthNamesUK = ["cічня", "лютого", "березня", "квітня", "травня", "червня", "липня",
-    "серпня", "вересня", "жовтня", "листопада", "грудня"];
 
 
 /***/ }),
@@ -667,13 +450,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function FullComponent_footer_16_Template(rf, ctx) { if (rf & 1) {
+function FullComponent_footer_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "footer");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "@\u043D\u043E\u0432\u0438\u043D\u0438\u041Ci\u0441\u0442\u0430");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
+const _c0 = function () { return ["/dashboard"]; };
 /** @title Responsive sidenav */
 class FullComponent {
     constructor(changeDetectorRef, media, menuItems, _router) {
@@ -706,7 +490,7 @@ class FullComponent {
     }
 }
 FullComponent.ɵfac = function FullComponent_Factory(t) { return new (t || FullComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__["MediaMatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_shared_menu_items_menu_items__WEBPACK_IMPORTED_MODULE_2__["MenuItems"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"])); };
-FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: FullComponent, selectors: [["app-full-layout"]], decls: 17, vars: 1, consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], ["routerLink", "/dashboard", 1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap"], [4, "ngIf"]], template: function FullComponent_Template(rf, ctx) { if (rf & 1) {
+FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: FullComponent, selectors: [["app-full-layout"]], decls: 13, vars: 3, consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], ["routerLink", "/dashboard", 1, "label"], [1, "topbar-nav--wrap"], [3, "routerLink"], [1, "main-container--wrap"], [4, "ngIf"]], template: function FullComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
@@ -715,28 +499,24 @@ FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "ul");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u041D\u043E\u0432\u0438\u043D\u0438");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "li");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "\u041F\u0440\u043E \u043F\u0440\u043E\u0435\u043A\u0442");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "li", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "\u0423\u0432\u0456\u0439\u0442\u0438");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "app-spinner");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "app-spinner");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, FullComponent_footer_16_Template, 3, 0, "footer", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, FullComponent_footer_12_Template, 3, 0, "footer", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](2, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.showFooter);
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLink"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterOutlet"], _shared_spinner_component__WEBPACK_IMPORTED_MODULE_5__["SpinnerComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"]], styles: [".fixed-topbar[_ngcontent-%COMP%]     .mat-toolbar {\n  z-index: 999;\n  position: fixed;\n}\n\n.fixed-topbar[_ngcontent-%COMP%]     .mat-tab-group {\n  margin-top: 55px !important;\n}\n\n.fixed-topbar[_ngcontent-%COMP%]     .mat-tab-header {\n  z-index: 999;\n  width: 100vw;\n  position: fixed !important;\n}\n\n.fixed-topbar[_ngcontent-%COMP%]     .mat-tab-body-wrapper {\n  position: relative !important;\n  margin-top: 55px;\n}\n\n.fixed-topbar[_ngcontent-%COMP%] {\n  z-index: 999;\n  width: 100vw;\n  position: fixed !important;\n  background-color: #ffffff;\n}\n\n.main-container--wrap[_ngcontent-%COMP%] {\n  margin-top: 110px;\n  margin-bottom: 50px;\n}\n\n.topbar-wrap[_ngcontent-%COMP%] {\n  background-color: #fff;\n  font-size: 1.5rem;\n  display: flex;\n  justify-content: space-between;\n  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05) !important;\n  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05) !important;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .label[_ngcontent-%COMP%] {\n  color: #0d70b4;\n  display: flex;\n  align-items: center;\n  padding: 1.1rem;\n  font-weight: 800;\n  cursor: pointer;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .topbar-nav--wrap[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .topbar-nav--wrap[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%] {\n  margin-right: 1rem;\n  list-style: none;\n  margin: 0px;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .topbar-nav--wrap[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  display: flex !important;\n  height: 100%;\n  align-items: center;\n  cursor: pointer;\n  display: inline-block;\n  padding: 0px 20px 0px 20px;\n  transition-property: background-color, color;\n  transition-duration: 0.5s;\n  transition-timing-function: ease;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .topbar-nav--wrap[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]:hover {\n  background-color: #f3f8f9;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   .sign-in[_ngcontent-%COMP%] {\n  color: #0d70b4;\n}\n\na[_ngcontent-%COMP%] {\n  padding: 5px 15px;\n  background-color: blue;\n  color: white;\n  text-decoration: none;\n  margin: 10px;\n  transition-property: background-color, color;\n  transition-duration: 2s;\n  transition-timing-function: ease;\n  font-weight: bold;\n}\n\na[_ngcontent-%COMP%]:hover {\n  color: red;\n  background-color: green;\n}\n\nfooter[_ngcontent-%COMP%] {\n  z-index: 999;\n  width: 100vw;\n  bottom: 0px;\n  background-color: #fff;\n  box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.15) !important;\n  -webkit-box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.15) !important;\n}\n\nfooter[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  text-align: center;\n  margin: 0.5rem;\n  font-size: 0.8rem;\n}\n\nfooter[_ngcontent-%COMP%]   *[_ngcontent-%COMP%] {\n  background-color: #fff;\n}\n\n.topbar-wrap[_ngcontent-%COMP%]   *[_ngcontent-%COMP%] {\n  background-color: #fff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5b3V0cy9mdWxsL2Z1bGwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFFSSxZQUFZO0VBQ1osZUFBZTtBQUhuQjs7QUFBQTtFQU1JLDJCQUEyQjtBQUYvQjs7QUFKQTtFQVVJLFlBQVk7RUFDWixZQUFZO0VBQ1osMEJBQTBCO0FBRjlCOztBQVZBO0VBZUksNkJBQTZCO0VBQzdCLGdCQUFnQjtBQURwQjs7QUFLQTtFQUNFLFlBQVk7RUFDWixZQUFZO0VBQ1osMEJBQTBCO0VBQzFCLHlCQUF5QjtBQUYzQjs7QUFLQTtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7QUFGckI7O0FBTUE7RUFDRSxzQkFBc0I7RUFFdEIsaUJBQWlCO0VBQ2pCLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsdURBQXVEO0VBQ3ZELCtEQUErRDtBQUpqRTs7QUFIQTtFQVVJLGNBOUNtQjtFQStDbkIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFIbkI7O0FBWkE7RUFtQkksZUFBZTtFQUNmLGFBQWE7RUFDYixtQkFBbUI7QUFIdkI7O0FBbEJBO0VBdUJNLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFlBQVk7RUFDWixhQUFhO0VBQ2IsbUJBQW1CO0FBRHpCOztBQTNCQTtFQThCUSx3QkFBd0I7RUFDeEIsWUFBWTtFQUNaLG1CQUFtQjtFQUNuQixlQUFlO0VBQ2YscUJBQXFCO0VBQ3JCLDBCQUEwQjtFQUUxQiw0Q0FBNEM7RUFDNUMseUJBQXlCO0VBQ3pCLGdDQUFnQztBQUF4Qzs7QUF2Q0E7RUF5Q1UseUJBNUU4QjtBQThFeEM7O0FBM0NBO0VBK0NJLGNBbkZtQjtBQW1GdkI7O0FBSUE7RUFDRSxpQkFBaUI7RUFDakIsc0JBQXNCO0VBQ3RCLFlBQVk7RUFDWixxQkFBcUI7RUFDckIsWUFBWTtFQUNaLDRDQUE0QztFQUM1Qyx1QkFBdUI7RUFDdkIsZ0NBQWdDO0VBQ2hDLGlCQUFpQjtBQURuQjs7QUFJQTtFQUNFLFVBQVU7RUFDVix1QkFBdUI7QUFEekI7O0FBSUE7RUFDRSxZQUFZO0VBQ1osWUFBWTtFQUVaLFdBQVc7RUFDWCxzQkFBc0I7RUFFdEIsdURBQXVEO0VBQ3ZELCtEQUErRDtBQUhqRTs7QUFMQTtFQVVJLGtCQUFrQjtFQUNsQixjQUFjO0VBQ2QsaUJBQWlCO0FBRHJCOztBQUtBO0VBQ0Usc0JBQXNCO0FBRnhCOztBQUtBO0VBQ0Usc0JBQXNCO0FBRnhCIiwiZmlsZSI6InNyYy9hcHAvbGF5b3V0cy9mdWxsL2Z1bGwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkY29sb3ItcHJpbWFyeTogIzBkNzBiNDtcclxuJGNvbG9yLWJhY2tncm91bmQtLWJ1dHRvbi1ob3ZlcjogI2YzZjhmOTtcclxuXHJcbi5maXhlZC10b3BiYXIge1xyXG4gIDo6bmctZGVlcCAubWF0LXRvb2xiYXIge1xyXG4gICAgei1pbmRleDogOTk5O1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gIH1cclxuICA6Om5nLWRlZXAgLm1hdC10YWItZ3JvdXAge1xyXG4gICAgbWFyZ2luLXRvcDogNTVweCAhaW1wb3J0YW50O1xyXG4gIH1cclxuXHJcbiAgOjpuZy1kZWVwIC5tYXQtdGFiLWhlYWRlciB7XHJcbiAgICB6LWluZGV4OiA5OTk7XHJcbiAgICB3aWR0aDogMTAwdnc7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQgIWltcG9ydGFudDtcclxuICB9XHJcbiAgOjpuZy1kZWVwIC5tYXQtdGFiLWJvZHktd3JhcHBlciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmUgIWltcG9ydGFudDtcclxuICAgIG1hcmdpbi10b3A6IDU1cHg7XHJcbiAgfVxyXG59XHJcblxyXG4uZml4ZWQtdG9wYmFyIHtcclxuICB6LWluZGV4OiA5OTk7XHJcbiAgd2lkdGg6IDEwMHZ3O1xyXG4gIHBvc2l0aW9uOiBmaXhlZCAhaW1wb3J0YW50O1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7XHJcbn1cclxuXHJcbi5tYWluLWNvbnRhaW5lci0td3JhcCB7XHJcbiAgbWFyZ2luLXRvcDogMTEwcHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogNTBweDtcclxuICAvLyBtYXgtaGVpZ2h0OiA4M3ZoO1xyXG4gIC8vIG92ZXJmbG93LXk6IGF1dG87XHJcbn1cclxuLnRvcGJhci13cmFwIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cclxuICBmb250LXNpemU6IDEuNXJlbTtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICBib3gtc2hhZG93OiAwcHggNXB4IDIwcHggcmdiYSgwLCAwLCAwLCAwLjA1KSAhaW1wb3J0YW50O1xyXG4gIC13ZWJraXQtYm94LXNoYWRvdzogMHB4IDVweCAyMHB4IHJnYmEoMCwgMCwgMCwgMC4wNSkgIWltcG9ydGFudDtcclxuXHJcbiAgLmxhYmVsIHtcclxuICAgIGNvbG9yOiAkY29sb3ItcHJpbWFyeTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgcGFkZGluZzogMS4xcmVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IDgwMDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcblxyXG4gIC50b3BiYXItbmF2LS13cmFwIHtcclxuICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgdWwge1xyXG4gICAgICBtYXJnaW4tcmlnaHQ6IDFyZW07XHJcbiAgICAgIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgICAgIG1hcmdpbjogMHB4O1xyXG4gICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgIGxpIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBwYWRkaW5nOiAwcHggMjBweCAwcHggMjBweDtcclxuXHJcbiAgICAgICAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogYmFja2dyb3VuZC1jb2xvciwgY29sb3I7XHJcbiAgICAgICAgdHJhbnNpdGlvbi1kdXJhdGlvbjogMC41cztcclxuICAgICAgICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogZWFzZTtcclxuICAgICAgICAmOmhvdmVyIHtcclxuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1iYWNrZ3JvdW5kLS1idXR0b24taG92ZXI7XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICB9XHJcbiAgfVxyXG4gIC5zaWduLWluIHtcclxuICAgIGNvbG9yOiAkY29sb3ItcHJpbWFyeTtcclxuICB9XHJcbn1cclxuXHJcbmEge1xyXG4gIHBhZGRpbmc6IDVweCAxNXB4O1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGJsdWU7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICBtYXJnaW46IDEwcHg7XHJcbiAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogYmFja2dyb3VuZC1jb2xvciwgY29sb3I7XHJcbiAgdHJhbnNpdGlvbi1kdXJhdGlvbjogMnM7XHJcbiAgdHJhbnNpdGlvbi10aW1pbmctZnVuY3Rpb246IGVhc2U7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbmE6aG92ZXIge1xyXG4gIGNvbG9yOiByZWQ7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogZ3JlZW47XHJcbn1cclxuXHJcbmZvb3RlciB7XHJcbiAgei1pbmRleDogOTk5O1xyXG4gIHdpZHRoOiAxMDB2dztcclxuICAvLyBwb3NpdGlvbjogZml4ZWQgIWltcG9ydGFudDtcclxuICBib3R0b206IDBweDtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cclxuICBib3gtc2hhZG93OiA1cHggMHB4IDMwcHggcmdiYSgwLCAwLCAwLCAwLjE1KSAhaW1wb3J0YW50O1xyXG4gIC13ZWJraXQtYm94LXNoYWRvdzogNXB4IDBweCAzMHB4IHJnYmEoMCwgMCwgMCwgMC4xNSkgIWltcG9ydGFudDtcclxuICBwIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbjogMC41cmVtO1xyXG4gICAgZm9udC1zaXplOiAwLjhyZW07XHJcbiAgfVxyXG59XHJcblxyXG5mb290ZXIgKiB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxufVxyXG5cclxuLnRvcGJhci13cmFwICp7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxufVxyXG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](FullComponent, [{
@@ -958,6 +738,395 @@ AppSidebarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
                 styleUrls: []
             }]
     }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"] }, { type: _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["MediaMatcher"] }, { type: _shared_menu_items_menu_items__WEBPACK_IMPORTED_MODULE_2__["MenuItems"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/services/data-provider/data-provider.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/services/data-provider/data-provider.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: DataProviderService, DataProviderHelper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderService", function() { return DataProviderService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderHelper", function() { return DataProviderHelper; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
+/* harmony import */ var _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dataProviderExtension.service */ "./src/app/services/data-provider/dataProviderExtension.service.ts");
+
+
+
+
+
+
+
+class DataProviderService {
+    constructor(firestore, afAuth) {
+        this.firestore = firestore;
+        this.afAuth = afAuth;
+        // private fireNews: any = [];
+        this.initialized = false;
+        this.dataProviderHelper = new DataProviderHelper();
+    }
+    init() {
+        let promise = new Promise((resolve, reject) => {
+            if (this.initialized) {
+                console.log("DataProviderService ready");
+                resolve("Success!");
+                return;
+            }
+            console.log("💥 DataProviderService init start");
+            this.initFirebaseAnonimus().then((res => {
+                resolve("Success!");
+                this.initialized = true;
+            }));
+        });
+        return promise;
+    }
+    initFirebaseAnonimus() {
+        let promise = new Promise((resolve, reject) => {
+            this.afAuth.signInAnonymously().then(() => {
+                console.log("✅ firebase initialized");
+                let fireNews = [];
+                this.firestore.collection('global_news').get().subscribe(fireItem => {
+                    fireItem.docs.forEach((item) => {
+                        var el = this.parseFirebaseItem(item.data(), item.id);
+                        fireNews.push(el);
+                    });
+                    this.dataProviderHelper.init(fireNews);
+                    console.log("🌐 firebase: got global_news");
+                    console.log(fireNews);
+                    resolve("Success!");
+                });
+            });
+        });
+        return promise;
+    }
+    initTestData() {
+        let fireNews = [];
+        for (let index = 0; index < 10; index++) {
+            var d1 = {
+                fullText: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.`,
+                shortText: `тестhh\nN\nM\nM\nUu\nU\nJ\n ..`,
+                imageUrl: `assets/images/background/post-icon.svg`,
+                images: [`assets/images/background/post-icon.svg`],
+                subtitle: "",
+                title: `Тест новость ${index}`,
+                id: index.toString(),
+                category: "Tw9CypPH0HU9MGVOp8S1",
+                categoryName: "Освітні події",
+                date: new Date("1970-01-19"),
+                dateViewModel: "1970-01-19",
+                image_F_Url: `assets/images/background/post-icon.svg`,
+                info: "тестhh\nN\nM\nM\nUu\nU\nJ\nJj\nJ\nJ\nJ\nJhu\nUyy\nYjh\nHh\nHhh\nH\n\nHh\nHhh\n\nH\nH\nH\nH\nHh\n\nH\nH\nH\nH",
+                likes: 1,
+                name: "тест новость",
+                views: 3
+            };
+            if (index === 1) {
+                d1.imageUrl = `assets/images/background/test/test-1.jpg`;
+                d1.images = [`assets/images/background/test/test-1.jpg`,
+                    `assets/images/background/test/test-2.jpg`];
+                d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+            }
+            if (index === 2) {
+                d1.imageUrl = `assets/images/background/test/test-8.jpg`;
+                d1.images = [`assets/images/background/test/test-1.jpg`,
+                    `assets/images/background/test/test-2.jpg`,
+                    `assets/images/background/test/test-3.jpg`,
+                    `assets/images/background/test/test-8.jpg`,];
+                d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+            }
+            fireNews.push(d1);
+        }
+        this.dataProviderHelper.init(fireNews);
+    }
+    parseFirebaseItem(item, id) {
+        console.log("⚪ fire db item: ", item);
+        console.log("_________\n\n");
+        let model = {
+            fullText: item.info,
+            shortText: `${item.info.substring(0, 120)} ...`,
+            imageUrl: item.image_f_url[0] == undefined ?
+                `assets/images/background/default.jpg` : item.image_f_url[0],
+            images: item.image_f_url,
+            subtitle: "",
+            title: item.name,
+            id: id,
+            category: item.category,
+            categoryName: item.category_name,
+            date: new Date(item.date.seconds),
+            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(item.date.seconds),
+            // dateViewModel: formatDate(new Date(itemData.date.seconds), 'yyyy-MM-dd', 'en-US'),
+            image_F_Url: item.image_f_url[0] == undefined ?
+                `assets/images/background/default.jpg` : item.image_f_url[0],
+            info: item.info,
+            likes: item.likes,
+            name: item.name,
+            views: item.views,
+            price: item.price,
+            site: item.site,
+            street: item.street,
+            time: item.time
+        };
+        return model;
+    }
+    getById(id) {
+        let promise = new Promise((resolve, reject) => {
+            if (!this.initialized) {
+                this.init().then(() => {
+                    resolve(this.dataProviderHelper.getById(id));
+                });
+                return;
+            }
+            let result = this.dataProviderHelper.getById(id);
+            resolve(result);
+        });
+        return promise;
+    }
+    getAll() {
+        let promise = new Promise((resolve, reject) => {
+            if (!this.initialized) {
+                this.init().then(() => {
+                    resolve(this.dataProviderHelper.getAll());
+                });
+                return;
+            }
+            resolve(this.dataProviderHelper.getAll());
+        });
+        return promise;
+    }
+    getPagedArticles(skip, take) {
+        return this.dataProviderHelper.getPagedArticles(skip, take);
+    }
+    uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+}
+DataProviderService.ɵfac = function DataProviderService_Factory(t) { return new (t || DataProviderService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"])); };
+DataProviderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DataProviderService, factory: DataProviderService.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataProviderService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }], function () { return [{ type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }, { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"] }]; }, null); })();
+class DataProviderHelper {
+    constructor() {
+        this.data = [];
+    }
+    init(data) {
+        if (!data)
+            return;
+        this.data = data;
+    }
+    getById(id) {
+        let result;
+        let article = this.data.find((x) => { return x.id === id; });
+        if (article)
+            result = { success: true, item: article };
+        else
+            result = { success: false, item: article };
+        return result;
+    }
+    getPagedArticles(skip, take) {
+        return this.data.slice(skip, take);
+    }
+    getAll() {
+        return this.data;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/services/data-provider/dataProviderExtension.service.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/services/data-provider/dataProviderExtension.service.ts ***!
+  \*************************************************************************/
+/*! exports provided: DataProviderExtension */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataProviderExtension", function() { return DataProviderExtension; });
+class DataProviderExtension {
+    static dateTimeToUkrainianString(miliseconds) {
+        let d = new Date(miliseconds * 1000);
+        let cDay = d.getDate();
+        let cYear = d.getFullYear();
+        let cMonth = this.monthNamesUK[d.getMonth()];
+        return `${cDay} ${cMonth} ${cYear}p.`;
+    }
+}
+DataProviderExtension.monthNamesEN = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+DataProviderExtension.monthNamesUK = ["cічня", "лютого", "березня", "квітня", "травня", "червня", "липня",
+    "серпня", "вересня", "жовтня", "листопада", "грудня"];
+
+
+/***/ }),
+
+/***/ "./src/app/services/firebaseDynamicLink.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/services/firebaseDynamicLink.service.ts ***!
+  \*********************************************************/
+/*! exports provided: FirebaseDynamicLinkService, CreateDynamicLinkRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseDynamicLinkService", function() { return FirebaseDynamicLinkService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateDynamicLinkRequest", function() { return CreateDynamicLinkRequest; });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+
+class FirebaseDynamicLinkService {
+    constructor(http) {
+        this.http = http;
+        this.template = `https://mycitykherson.page.link/?link=https://kherson-city.web.app/%23/dashboard&apn=com.mycity.kherson`;
+        this.subdomain = `https://mycitykherson.page.link`;
+        this.test = "test";
+    }
+    getDynamicLink(articleId, type) {
+        let base64Data = this.requestParamsToBase64(articleId, type);
+        let requestModel = this.getRequestModel(base64Data);
+        return this.http.post(`https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].firebase.apiKey}`, requestModel);
+    }
+    getRequestModel(base64Data) {
+        return {
+            dynamicLinkInfo: {
+                domainUriPrefix: "https://mycitykherson.page.link",
+                link: `https://mycitykherson.page.link/${base64Data}`,
+                androidInfo: {
+                    "androidPackageName": "com.mycity.kherson"
+                },
+                iosInfo: {
+                    "iosBundleId": "com.mycity.kherson"
+                }
+            }
+        };
+    }
+    requestParamsToBase64(id, type) {
+        const model = {
+            id,
+            type
+        };
+        return btoa(JSON.stringify(model));
+    }
+}
+FirebaseDynamicLinkService.ɵfac = function FirebaseDynamicLinkService_Factory(t) { return new (t || FirebaseDynamicLinkService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"])); };
+FirebaseDynamicLinkService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: FirebaseDynamicLinkService, factory: FirebaseDynamicLinkService.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](FirebaseDynamicLinkService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"] }]; }, null); })();
+class CreateDynamicLinkRequest {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/services/script-loader.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/services/script-loader.service.ts ***!
+  \***************************************************/
+/*! exports provided: ScriptLoaderService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScriptLoaderService", function() { return ScriptLoaderService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+class ScriptLoaderService {
+    constructor() {
+        this._scripts = [];
+    }
+    /**
+     * @deprecated
+     * @param tag
+     * @param {string} scripts
+     * @returns {Promise<any[]>}
+     */
+    load(tag, ...scripts) {
+        scripts.forEach((src) => {
+            if (!this._scripts[src]) {
+                this._scripts[src] = { src: src, loaded: false };
+            }
+        });
+        let promises = [];
+        scripts.forEach((src) => promises.push(this.loadScript(tag, src)));
+        return Promise.all(promises);
+    }
+    /**
+     * Lazy load list of scripts
+     * @param tag
+     * @param scripts
+     * @param loadOnce
+     * @returns {Promise<any[]>}
+     */
+    loadScripts(tag, scripts, loadOnce) {
+        loadOnce = loadOnce || false;
+        scripts.forEach((script) => {
+            if (!this._scripts[script]) {
+                this._scripts[script] = { src: script, loaded: false };
+            }
+        });
+        let promises = [];
+        scripts.forEach((script) => promises.push(this.loadScript(tag, script, loadOnce)));
+        return Promise.all(promises);
+    }
+    /**
+     * Lazy load a single script
+     * @param tag
+     * @param {string} src
+     * @param loadOnce
+     * @returns {Promise<any>}
+     */
+    loadScript(tag, src, loadOnce) {
+        loadOnce = loadOnce || false;
+        if (!this._scripts[src]) {
+            this._scripts[src] = { src: src, loaded: false };
+        }
+        return new Promise((resolve, reject) => {
+            // resolve if already loaded
+            if (this._scripts[src].loaded && loadOnce) {
+                resolve({ src: src, loaded: true });
+            }
+            else {
+                // load script tag
+                let scriptTag = jquery__WEBPACK_IMPORTED_MODULE_1__('<script/>').
+                    attr('type', 'text/javascript').
+                    attr('src', this._scripts[src].src);
+                jquery__WEBPACK_IMPORTED_MODULE_1__(tag).append(scriptTag);
+                this._scripts[src] = { src: src, loaded: true };
+                resolve({ src: src, loaded: true });
+            }
+        });
+    }
+    isScriptLoaded(scriptName) {
+        return jquery__WEBPACK_IMPORTED_MODULE_1__('script[src="' + scriptName + '"]').length != 0;
+    }
+}
+ScriptLoaderService.ɵfac = function ScriptLoaderService_Factory(t) { return new (t || ScriptLoaderService)(); };
+ScriptLoaderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ScriptLoaderService, factory: ScriptLoaderService.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ScriptLoaderService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }], null, null); })();
 
 
 /***/ }),
@@ -1389,7 +1558,7 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["platformBrowser"]().boot
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\main.ts */"./src/main.ts");
 
 
 /***/ })

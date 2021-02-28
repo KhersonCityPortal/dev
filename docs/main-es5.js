@@ -264,9 +264,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
-    /*! ./data-provider/data-provider.service */
-    "./src/app/data-provider/data-provider.service.ts");
+    var _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    /*! ./services/data-provider/data-provider.service */
+    "./src/app/services/data-provider/data-provider.service.ts");
+    /* harmony import */
+
+
+    var _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    /*! ./services/firebaseDynamicLink.service */
+    "./src/app/services/firebaseDynamicLink.service.ts");
+    /* harmony import */
+
+
+    var angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    /*! angularx-qrcode */
+    "./node_modules/angularx-qrcode/__ivy_ngcc__/fesm2015/angularx-qrcode.js");
+    /* harmony import */
+
+
+    var _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    /*! ./services/script-loader.service */
+    "./src/app/services/script-loader.service.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -283,14 +301,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       providers: [{
         provide: _angular_common__WEBPACK_IMPORTED_MODULE_5__["LocationStrategy"],
         useClass: _angular_common__WEBPACK_IMPORTED_MODULE_5__["HashLocationStrategy"]
-      }, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"], _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"]],
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutes"]), _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_18__["environment"].firebase), _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]]]
+      }, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"], _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"], _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__["FirebaseDynamicLinkService"], _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__["ScriptLoaderService"]],
+      imports: [[angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutes"]), _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_18__["environment"].firebase), _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_9__["FullComponent"], _layouts_full_header_header_component__WEBPACK_IMPORTED_MODULE_10__["AppHeaderComponent"], _shared_spinner_component__WEBPACK_IMPORTED_MODULE_15__["SpinnerComponent"], _layouts_full_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["AppSidebarComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]]
+        imports: [angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]]
       });
     })();
     /*@__PURE__*/
@@ -301,11 +319,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_9__["FullComponent"], _layouts_full_header_header_component__WEBPACK_IMPORTED_MODULE_10__["AppHeaderComponent"], _shared_spinner_component__WEBPACK_IMPORTED_MODULE_15__["SpinnerComponent"], _layouts_full_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_11__["AppSidebarComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutes"]), _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_18__["environment"].firebase), _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]],
+          imports: [angularx_qrcode__WEBPACK_IMPORTED_MODULE_22__["QRCodeModule"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _demo_material_module__WEBPACK_IMPORTED_MODULE_13__["DemoMaterialModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_14__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(_app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutes"]), _angular_fire__WEBPACK_IMPORTED_MODULE_16__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_18__["environment"].firebase), _angular_fire_database__WEBPACK_IMPORTED_MODULE_17__["AngularFireDatabaseModule"]],
           providers: [{
             provide: _angular_common__WEBPACK_IMPORTED_MODULE_5__["LocationStrategy"],
             useClass: _angular_common__WEBPACK_IMPORTED_MODULE_5__["HashLocationStrategy"]
-          }, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"], _data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"]],
+          }, _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_19__["AngularFirestore"], _services_data_provider_data_provider_service__WEBPACK_IMPORTED_MODULE_20__["DataProviderService"], _services_firebaseDynamicLink_service__WEBPACK_IMPORTED_MODULE_21__["FirebaseDynamicLinkService"], _services_script_loader_service__WEBPACK_IMPORTED_MODULE_23__["ScriptLoaderService"]],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         }]
       }], null, null);
@@ -371,357 +389,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }]
     }];
-    /***/
-  },
-
-  /***/
-  "./src/app/data-provider/data-provider.service.ts":
-  /*!********************************************************!*\
-    !*** ./src/app/data-provider/data-provider.service.ts ***!
-    \********************************************************/
-
-  /*! exports provided: DataProviderService, DataProviderHelper */
-
-  /***/
-  function srcAppDataProviderDataProviderServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "DataProviderService", function () {
-      return DataProviderService;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "DataProviderHelper", function () {
-      return DataProviderHelper;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/fire/auth */
-    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
-    /* harmony import */
-
-
-    var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/fire/firestore */
-    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
-    /* harmony import */
-
-
-    var _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./dataProviderExtension.service */
-    "./src/app/data-provider/dataProviderExtension.service.ts");
-
-    var DataProviderService = /*#__PURE__*/function () {
-      function DataProviderService(firestore, afAuth) {
-        _classCallCheck(this, DataProviderService);
-
-        this.firestore = firestore;
-        this.afAuth = afAuth; // private fireNews: any = [];
-
-        this.initialized = false;
-        this.dataProviderHelper = new DataProviderHelper();
-      }
-
-      _createClass(DataProviderService, [{
-        key: "init",
-        value: function init() {
-          var _this = this;
-
-          var promise = new Promise(function (resolve, reject) {
-            if (_this.initialized) {
-              console.log("DataProviderService ready");
-              resolve("Success!");
-              return;
-            }
-
-            console.log("💥 DataProviderService init start");
-
-            _this.initFirebaseAnonimus().then(function (res) {
-              resolve("Success!");
-              _this.initialized = true;
-            });
-          });
-          return promise;
-        }
-      }, {
-        key: "initFirebaseAnonimus",
-        value: function initFirebaseAnonimus() {
-          var _this2 = this;
-
-          var promise = new Promise(function (resolve, reject) {
-            _this2.afAuth.signInAnonymously().then(function () {
-              console.log("✅ firebase initialized");
-              var fireNews = [];
-
-              _this2.firestore.collection('global_news').get().subscribe(function (fireItem) {
-                fireItem.docs.forEach(function (item) {
-                  var el = _this2.parseFirebaseItem(item.data(), item.id);
-
-                  fireNews.push(el);
-                });
-
-                _this2.dataProviderHelper.init(fireNews);
-
-                console.log("🌐 firebase: got global_news");
-                console.log(fireNews);
-                resolve("Success!");
-              });
-            });
-          });
-          return promise;
-        }
-      }, {
-        key: "initTestData",
-        value: function initTestData() {
-          var fireNews = [];
-
-          for (var index = 0; index < 10; index++) {
-            var d1 = {
-              fullText: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-              shortText: "\u0442\u0435\u0441\u0442hh\nN\nM\nM\nUu\nU\nJ\n ..",
-              imageUrl: "assets/images/background/post-icon.svg",
-              images: ["assets/images/background/post-icon.svg"],
-              subtitle: "",
-              title: "\u0422\u0435\u0441\u0442 \u043D\u043E\u0432\u043E\u0441\u0442\u044C ".concat(index),
-              id: index.toString(),
-              category: "Tw9CypPH0HU9MGVOp8S1",
-              categoryName: "Освітні події",
-              date: new Date("1970-01-19"),
-              dateViewModel: "1970-01-19",
-              image_F_Url: "assets/images/background/post-icon.svg",
-              info: "тестhh\nN\nM\nM\nUu\nU\nJ\nJj\nJ\nJ\nJ\nJhu\nUyy\nYjh\nHh\nHhh\nH\n\nHh\nHhh\n\nH\nH\nH\nH\nHh\n\nH\nH\nH\nH",
-              likes: 1,
-              name: "тест новость",
-              views: 3
-            };
-
-            if (index === 1) {
-              d1.imageUrl = "assets/images/background/test/test-1.jpg";
-              d1.images = ["assets/images/background/test/test-1.jpg", "assets/images/background/test/test-2.jpg"];
-              d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
-            }
-
-            if (index === 2) {
-              d1.imageUrl = "assets/images/background/test/test-8.jpg";
-              d1.images = ["assets/images/background/test/test-1.jpg", "assets/images/background/test/test-2.jpg", "assets/images/background/test/test-3.jpg", "assets/images/background/test/test-8.jpg"];
-              d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
-            }
-
-            fireNews.push(d1);
-          }
-
-          this.dataProviderHelper.init(fireNews);
-        }
-      }, {
-        key: "parseFirebaseItem",
-        value: function parseFirebaseItem(item, id) {
-          console.log("⚪ fire db item: ", item);
-          console.log("_________\n\n");
-          var model = {
-            fullText: item.info,
-            shortText: "".concat(item.info.substring(0, 120), " ..."),
-            imageUrl: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
-            images: item.image_f_url,
-            subtitle: "",
-            title: item.name,
-            id: id,
-            category: item.category,
-            categoryName: item.category_name,
-            date: new Date(item.date.seconds),
-            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(item.date.seconds),
-            // dateViewModel: formatDate(new Date(itemData.date.seconds), 'yyyy-MM-dd', 'en-US'),
-            image_F_Url: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
-            info: item.info,
-            likes: item.likes,
-            name: item.name,
-            views: item.views,
-            price: item.price,
-            site: item.site,
-            street: item.street,
-            time: item.time
-          };
-          return model;
-        }
-      }, {
-        key: "getById",
-        value: function getById(id) {
-          var _this3 = this;
-
-          var promise = new Promise(function (resolve, reject) {
-            if (!_this3.initialized) {
-              _this3.init().then(function () {
-                resolve(_this3.dataProviderHelper.getById(id));
-              });
-
-              return;
-            }
-
-            var result = _this3.dataProviderHelper.getById(id);
-
-            resolve(result);
-          });
-          return promise;
-        }
-      }, {
-        key: "getAll",
-        value: function getAll() {
-          var _this4 = this;
-
-          var promise = new Promise(function (resolve, reject) {
-            if (!_this4.initialized) {
-              _this4.init().then(function () {
-                resolve(_this4.dataProviderHelper.getAll());
-              });
-
-              return;
-            }
-
-            resolve(_this4.dataProviderHelper.getAll());
-          });
-          return promise;
-        }
-      }, {
-        key: "getPagedArticles",
-        value: function getPagedArticles(skip, take) {
-          return this.dataProviderHelper.getPagedArticles(skip, take);
-        }
-      }, {
-        key: "uuidv4",
-        value: function uuidv4() {
-          return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16 | 0,
-                v = c == 'x' ? r : r & 0x3 | 0x8;
-            return v.toString(16);
-          });
-        }
-      }]);
-
-      return DataProviderService;
-    }();
-
-    DataProviderService.ɵfac = function DataProviderService_Factory(t) {
-      return new (t || DataProviderService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]));
-    };
-
-    DataProviderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DataProviderService,
-      factory: DataProviderService.ɵfac
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataProviderService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-      }], function () {
-        return [{
-          type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]
-        }, {
-          type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]
-        }];
-      }, null);
-    })();
-
-    var DataProviderHelper = /*#__PURE__*/function () {
-      function DataProviderHelper() {
-        _classCallCheck(this, DataProviderHelper);
-
-        this.data = [];
-      }
-
-      _createClass(DataProviderHelper, [{
-        key: "init",
-        value: function init(data) {
-          if (!data) return;
-          this.data = data;
-        }
-      }, {
-        key: "getById",
-        value: function getById(id) {
-          var result;
-          var article = this.data.find(function (x) {
-            return x.id === id;
-          });
-          if (article) result = {
-            success: true,
-            item: article
-          };else result = {
-            success: false,
-            item: article
-          };
-          return result;
-        }
-      }, {
-        key: "getPagedArticles",
-        value: function getPagedArticles(skip, take) {
-          return this.data.slice(skip, take);
-        }
-      }, {
-        key: "getAll",
-        value: function getAll() {
-          return this.data;
-        }
-      }]);
-
-      return DataProviderHelper;
-    }();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/data-provider/dataProviderExtension.service.ts":
-  /*!****************************************************************!*\
-    !*** ./src/app/data-provider/dataProviderExtension.service.ts ***!
-    \****************************************************************/
-
-  /*! exports provided: DataProviderExtension */
-
-  /***/
-  function srcAppDataProviderDataProviderExtensionServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "DataProviderExtension", function () {
-      return DataProviderExtension;
-    });
-
-    var DataProviderExtension = /*#__PURE__*/function () {
-      function DataProviderExtension() {
-        _classCallCheck(this, DataProviderExtension);
-      }
-
-      _createClass(DataProviderExtension, null, [{
-        key: "dateTimeToUkrainianString",
-        value: function dateTimeToUkrainianString(miliseconds) {
-          var d = new Date(miliseconds * 1000);
-          var cDay = d.getDate();
-          var cYear = d.getFullYear();
-          var cMonth = this.monthNamesUK[d.getMonth()];
-          return "".concat(cDay, " ").concat(cMonth, " ").concat(cYear, "p.");
-        }
-      }]);
-
-      return DataProviderExtension;
-    }();
-
-    DataProviderExtension.monthNamesEN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    DataProviderExtension.monthNamesUK = ["cічня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
     /***/
   },
 
@@ -917,7 +584,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    function FullComponent_footer_16_Template(rf, ctx) {
+    function FullComponent_footer_12_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "footer");
 
@@ -930,6 +597,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
     }
+
+    var _c0 = function _c0() {
+      return ["/dashboard"];
+    };
     /** @title Responsive sidenav */
 
 
@@ -953,7 +624,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(FullComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this = this;
 
           this.handleFooter(this._router.url);
 
@@ -962,7 +633,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               jquery__WEBPACK_IMPORTED_MODULE_3__(window).scrollTop(0);
               console.log(route.url);
 
-              _this5.handleFooter(route.url);
+              _this.handleFooter(route.url);
             }
           });
         }
@@ -988,9 +659,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     FullComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: FullComponent,
       selectors: [["app-full-layout"]],
-      decls: 17,
-      vars: 1,
-      consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], ["routerLink", "/dashboard", 1, "label"], [1, "topbar-nav--wrap"], [1, "sign-in"], [1, "main-container--wrap"], [4, "ngIf"]],
+      decls: 13,
+      vars: 3,
+      consts: [[1, "main-container"], [1, "fixed-topbar"], [1, "topbar-wrap"], ["routerLink", "/dashboard", 1, "label"], [1, "topbar-nav--wrap"], [3, "routerLink"], [1, "main-container--wrap"], [4, "ngIf"]],
       template: function FullComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -1009,22 +680,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "ul");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li", 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u041D\u043E\u0432\u0438\u043D\u0438");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "\u041F\u0440\u043E \u043F\u0440\u043E\u0435\u043A\u0442");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "li", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "\u0423\u0432\u0456\u0439\u0442\u0438");
-
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -1033,25 +694,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "router-outlet");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "router-outlet");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "app-spinner");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "app-spinner");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](16, FullComponent_footer_16_Template, 3, 0, "footer", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, FullComponent_footer_12_Template, 3, 0, "footer", 7);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](2, _c0));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.showFooter);
         }
@@ -1540,6 +1203,649 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/services/data-provider/data-provider.service.ts":
+  /*!*****************************************************************!*\
+    !*** ./src/app/services/data-provider/data-provider.service.ts ***!
+    \*****************************************************************/
+
+  /*! exports provided: DataProviderService, DataProviderHelper */
+
+  /***/
+  function srcAppServicesDataProviderDataProviderServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DataProviderService", function () {
+      return DataProviderService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DataProviderHelper", function () {
+      return DataProviderHelper;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/fire/auth */
+    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
+    /* harmony import */
+
+
+    var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/fire/firestore */
+    "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
+    /* harmony import */
+
+
+    var _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./dataProviderExtension.service */
+    "./src/app/services/data-provider/dataProviderExtension.service.ts");
+
+    var DataProviderService = /*#__PURE__*/function () {
+      function DataProviderService(firestore, afAuth) {
+        _classCallCheck(this, DataProviderService);
+
+        this.firestore = firestore;
+        this.afAuth = afAuth; // private fireNews: any = [];
+
+        this.initialized = false;
+        this.dataProviderHelper = new DataProviderHelper();
+      }
+
+      _createClass(DataProviderService, [{
+        key: "init",
+        value: function init() {
+          var _this2 = this;
+
+          var promise = new Promise(function (resolve, reject) {
+            if (_this2.initialized) {
+              console.log("DataProviderService ready");
+              resolve("Success!");
+              return;
+            }
+
+            console.log("💥 DataProviderService init start");
+
+            _this2.initFirebaseAnonimus().then(function (res) {
+              resolve("Success!");
+              _this2.initialized = true;
+            });
+          });
+          return promise;
+        }
+      }, {
+        key: "initFirebaseAnonimus",
+        value: function initFirebaseAnonimus() {
+          var _this3 = this;
+
+          var promise = new Promise(function (resolve, reject) {
+            _this3.afAuth.signInAnonymously().then(function () {
+              console.log("✅ firebase initialized");
+              var fireNews = [];
+
+              _this3.firestore.collection('global_news').get().subscribe(function (fireItem) {
+                fireItem.docs.forEach(function (item) {
+                  var el = _this3.parseFirebaseItem(item.data(), item.id);
+
+                  fireNews.push(el);
+                });
+
+                _this3.dataProviderHelper.init(fireNews);
+
+                console.log("🌐 firebase: got global_news");
+                console.log(fireNews);
+                resolve("Success!");
+              });
+            });
+          });
+          return promise;
+        }
+      }, {
+        key: "initTestData",
+        value: function initTestData() {
+          var fireNews = [];
+
+          for (var index = 0; index < 10; index++) {
+            var d1 = {
+              fullText: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+              shortText: "\u0442\u0435\u0441\u0442hh\nN\nM\nM\nUu\nU\nJ\n ..",
+              imageUrl: "assets/images/background/post-icon.svg",
+              images: ["assets/images/background/post-icon.svg"],
+              subtitle: "",
+              title: "\u0422\u0435\u0441\u0442 \u043D\u043E\u0432\u043E\u0441\u0442\u044C ".concat(index),
+              id: index.toString(),
+              category: "Tw9CypPH0HU9MGVOp8S1",
+              categoryName: "Освітні події",
+              date: new Date("1970-01-19"),
+              dateViewModel: "1970-01-19",
+              image_F_Url: "assets/images/background/post-icon.svg",
+              info: "тестhh\nN\nM\nM\nUu\nU\nJ\nJj\nJ\nJ\nJ\nJhu\nUyy\nYjh\nHh\nHhh\nH\n\nHh\nHhh\n\nH\nH\nH\nH\nHh\n\nH\nH\nH\nH",
+              likes: 1,
+              name: "тест новость",
+              views: 3
+            };
+
+            if (index === 1) {
+              d1.imageUrl = "assets/images/background/test/test-1.jpg";
+              d1.images = ["assets/images/background/test/test-1.jpg", "assets/images/background/test/test-2.jpg"];
+              d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+            }
+
+            if (index === 2) {
+              d1.imageUrl = "assets/images/background/test/test-8.jpg";
+              d1.images = ["assets/images/background/test/test-1.jpg", "assets/images/background/test/test-2.jpg", "assets/images/background/test/test-3.jpg", "assets/images/background/test/test-8.jpg"];
+              d1.fullText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \n\n Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+            }
+
+            fireNews.push(d1);
+          }
+
+          this.dataProviderHelper.init(fireNews);
+        }
+      }, {
+        key: "parseFirebaseItem",
+        value: function parseFirebaseItem(item, id) {
+          console.log("⚪ fire db item: ", item);
+          console.log("_________\n\n");
+          var model = {
+            fullText: item.info,
+            shortText: "".concat(item.info.substring(0, 120), " ..."),
+            imageUrl: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
+            images: item.image_f_url,
+            subtitle: "",
+            title: item.name,
+            id: id,
+            category: item.category,
+            categoryName: item.category_name,
+            date: new Date(item.date.seconds),
+            dateViewModel: _dataProviderExtension_service__WEBPACK_IMPORTED_MODULE_3__["DataProviderExtension"].dateTimeToUkrainianString(item.date.seconds),
+            // dateViewModel: formatDate(new Date(itemData.date.seconds), 'yyyy-MM-dd', 'en-US'),
+            image_F_Url: item.image_f_url[0] == undefined ? "assets/images/background/default.jpg" : item.image_f_url[0],
+            info: item.info,
+            likes: item.likes,
+            name: item.name,
+            views: item.views,
+            price: item.price,
+            site: item.site,
+            street: item.street,
+            time: item.time
+          };
+          return model;
+        }
+      }, {
+        key: "getById",
+        value: function getById(id) {
+          var _this4 = this;
+
+          var promise = new Promise(function (resolve, reject) {
+            if (!_this4.initialized) {
+              _this4.init().then(function () {
+                resolve(_this4.dataProviderHelper.getById(id));
+              });
+
+              return;
+            }
+
+            var result = _this4.dataProviderHelper.getById(id);
+
+            resolve(result);
+          });
+          return promise;
+        }
+      }, {
+        key: "getAll",
+        value: function getAll() {
+          var _this5 = this;
+
+          var promise = new Promise(function (resolve, reject) {
+            if (!_this5.initialized) {
+              _this5.init().then(function () {
+                resolve(_this5.dataProviderHelper.getAll());
+              });
+
+              return;
+            }
+
+            resolve(_this5.dataProviderHelper.getAll());
+          });
+          return promise;
+        }
+      }, {
+        key: "getPagedArticles",
+        value: function getPagedArticles(skip, take) {
+          return this.dataProviderHelper.getPagedArticles(skip, take);
+        }
+      }, {
+        key: "uuidv4",
+        value: function uuidv4() {
+          return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0,
+                v = c == 'x' ? r : r & 0x3 | 0x8;
+            return v.toString(16);
+          });
+        }
+      }]);
+
+      return DataProviderService;
+    }();
+
+    DataProviderService.ɵfac = function DataProviderService_Factory(t) {
+      return new (t || DataProviderService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]));
+    };
+
+    DataProviderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: DataProviderService,
+      factory: DataProviderService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataProviderService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]
+        }, {
+          type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]
+        }];
+      }, null);
+    })();
+
+    var DataProviderHelper = /*#__PURE__*/function () {
+      function DataProviderHelper() {
+        _classCallCheck(this, DataProviderHelper);
+
+        this.data = [];
+      }
+
+      _createClass(DataProviderHelper, [{
+        key: "init",
+        value: function init(data) {
+          if (!data) return;
+          this.data = data;
+        }
+      }, {
+        key: "getById",
+        value: function getById(id) {
+          var result;
+          var article = this.data.find(function (x) {
+            return x.id === id;
+          });
+          if (article) result = {
+            success: true,
+            item: article
+          };else result = {
+            success: false,
+            item: article
+          };
+          return result;
+        }
+      }, {
+        key: "getPagedArticles",
+        value: function getPagedArticles(skip, take) {
+          return this.data.slice(skip, take);
+        }
+      }, {
+        key: "getAll",
+        value: function getAll() {
+          return this.data;
+        }
+      }]);
+
+      return DataProviderHelper;
+    }();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/services/data-provider/dataProviderExtension.service.ts":
+  /*!*************************************************************************!*\
+    !*** ./src/app/services/data-provider/dataProviderExtension.service.ts ***!
+    \*************************************************************************/
+
+  /*! exports provided: DataProviderExtension */
+
+  /***/
+  function srcAppServicesDataProviderDataProviderExtensionServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DataProviderExtension", function () {
+      return DataProviderExtension;
+    });
+
+    var DataProviderExtension = /*#__PURE__*/function () {
+      function DataProviderExtension() {
+        _classCallCheck(this, DataProviderExtension);
+      }
+
+      _createClass(DataProviderExtension, null, [{
+        key: "dateTimeToUkrainianString",
+        value: function dateTimeToUkrainianString(miliseconds) {
+          var d = new Date(miliseconds * 1000);
+          var cDay = d.getDate();
+          var cYear = d.getFullYear();
+          var cMonth = this.monthNamesUK[d.getMonth()];
+          return "".concat(cDay, " ").concat(cMonth, " ").concat(cYear, "p.");
+        }
+      }]);
+
+      return DataProviderExtension;
+    }();
+
+    DataProviderExtension.monthNamesEN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    DataProviderExtension.monthNamesUK = ["cічня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+    /***/
+  },
+
+  /***/
+  "./src/app/services/firebaseDynamicLink.service.ts":
+  /*!*********************************************************!*\
+    !*** ./src/app/services/firebaseDynamicLink.service.ts ***!
+    \*********************************************************/
+
+  /*! exports provided: FirebaseDynamicLinkService, CreateDynamicLinkRequest */
+
+  /***/
+  function srcAppServicesFirebaseDynamicLinkServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseDynamicLinkService", function () {
+      return FirebaseDynamicLinkService;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CreateDynamicLinkRequest", function () {
+      return CreateDynamicLinkRequest;
+    });
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var FirebaseDynamicLinkService = /*#__PURE__*/function () {
+      function FirebaseDynamicLinkService(http) {
+        _classCallCheck(this, FirebaseDynamicLinkService);
+
+        this.http = http;
+        this.template = "https://mycitykherson.page.link/?link=https://kherson-city.web.app/%23/dashboard&apn=com.mycity.kherson";
+        this.subdomain = "https://mycitykherson.page.link";
+        this.test = "test";
+      }
+
+      _createClass(FirebaseDynamicLinkService, [{
+        key: "getDynamicLink",
+        value: function getDynamicLink(articleId, type) {
+          var base64Data = this.requestParamsToBase64(articleId, type);
+          var requestModel = this.getRequestModel(base64Data);
+          return this.http.post("https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].firebase.apiKey), requestModel);
+        }
+      }, {
+        key: "getRequestModel",
+        value: function getRequestModel(base64Data) {
+          return {
+            dynamicLinkInfo: {
+              domainUriPrefix: "https://mycitykherson.page.link",
+              link: "https://mycitykherson.page.link/".concat(base64Data),
+              androidInfo: {
+                "androidPackageName": "com.mycity.kherson"
+              },
+              iosInfo: {
+                "iosBundleId": "com.mycity.kherson"
+              }
+            }
+          };
+        }
+      }, {
+        key: "requestParamsToBase64",
+        value: function requestParamsToBase64(id, type) {
+          var model = {
+            id: id,
+            type: type
+          };
+          return btoa(JSON.stringify(model));
+        }
+      }]);
+
+      return FirebaseDynamicLinkService;
+    }();
+
+    FirebaseDynamicLinkService.ɵfac = function FirebaseDynamicLinkService_Factory(t) {
+      return new (t || FirebaseDynamicLinkService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]));
+    };
+
+    FirebaseDynamicLinkService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: FirebaseDynamicLinkService,
+      factory: FirebaseDynamicLinkService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](FirebaseDynamicLinkService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]
+        }];
+      }, null);
+    })();
+
+    var CreateDynamicLinkRequest = function CreateDynamicLinkRequest() {
+      _classCallCheck(this, CreateDynamicLinkRequest);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/services/script-loader.service.ts":
+  /*!***************************************************!*\
+    !*** ./src/app/services/script-loader.service.ts ***!
+    \***************************************************/
+
+  /*! exports provided: ScriptLoaderService */
+
+  /***/
+  function srcAppServicesScriptLoaderServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ScriptLoaderService", function () {
+      return ScriptLoaderService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! jquery */
+    "./node_modules/jquery/dist/jquery.js");
+    /* harmony import */
+
+
+    var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
+    var ScriptLoaderService = /*#__PURE__*/function () {
+      function ScriptLoaderService() {
+        _classCallCheck(this, ScriptLoaderService);
+
+        this._scripts = [];
+      }
+      /**
+       * @deprecated
+       * @param tag
+       * @param {string} scripts
+       * @returns {Promise<any[]>}
+       */
+
+
+      _createClass(ScriptLoaderService, [{
+        key: "load",
+        value: function load(tag) {
+          var _this6 = this;
+
+          for (var _len = arguments.length, scripts = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            scripts[_key - 1] = arguments[_key];
+          }
+
+          scripts.forEach(function (src) {
+            if (!_this6._scripts[src]) {
+              _this6._scripts[src] = {
+                src: src,
+                loaded: false
+              };
+            }
+          });
+          var promises = [];
+          scripts.forEach(function (src) {
+            return promises.push(_this6.loadScript(tag, src));
+          });
+          return Promise.all(promises);
+        }
+        /**
+         * Lazy load list of scripts
+         * @param tag
+         * @param scripts
+         * @param loadOnce
+         * @returns {Promise<any[]>}
+         */
+
+      }, {
+        key: "loadScripts",
+        value: function loadScripts(tag, scripts, loadOnce) {
+          var _this7 = this;
+
+          loadOnce = loadOnce || false;
+          scripts.forEach(function (script) {
+            if (!_this7._scripts[script]) {
+              _this7._scripts[script] = {
+                src: script,
+                loaded: false
+              };
+            }
+          });
+          var promises = [];
+          scripts.forEach(function (script) {
+            return promises.push(_this7.loadScript(tag, script, loadOnce));
+          });
+          return Promise.all(promises);
+        }
+        /**
+         * Lazy load a single script
+         * @param tag
+         * @param {string} src
+         * @param loadOnce
+         * @returns {Promise<any>}
+         */
+
+      }, {
+        key: "loadScript",
+        value: function loadScript(tag, src, loadOnce) {
+          var _this8 = this;
+
+          loadOnce = loadOnce || false;
+
+          if (!this._scripts[src]) {
+            this._scripts[src] = {
+              src: src,
+              loaded: false
+            };
+          }
+
+          return new Promise(function (resolve, reject) {
+            // resolve if already loaded
+            if (_this8._scripts[src].loaded && loadOnce) {
+              resolve({
+                src: src,
+                loaded: true
+              });
+            } else {
+              // load script tag
+              var scriptTag = jquery__WEBPACK_IMPORTED_MODULE_1__('<script/>').attr('type', 'text/javascript').attr('src', _this8._scripts[src].src);
+              jquery__WEBPACK_IMPORTED_MODULE_1__(tag).append(scriptTag);
+              _this8._scripts[src] = {
+                src: src,
+                loaded: true
+              };
+              resolve({
+                src: src,
+                loaded: true
+              });
+            }
+          });
+        }
+      }, {
+        key: "isScriptLoaded",
+        value: function isScriptLoaded(scriptName) {
+          return jquery__WEBPACK_IMPORTED_MODULE_1__('script[src="' + scriptName + '"]').length != 0;
+        }
+      }]);
+
+      return ScriptLoaderService;
+    }();
+
+    ScriptLoaderService.ɵfac = function ScriptLoaderService_Factory(t) {
+      return new (t || ScriptLoaderService)();
+    };
+
+    ScriptLoaderService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: ScriptLoaderService,
+      factory: ScriptLoaderService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ScriptLoaderService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], null, null);
+    })();
+    /***/
+
+  },
+
+  /***/
   "./src/app/shared/accordion/accordion.directive.ts":
   /*!*********************************************************!*\
     !*** ./src/app/shared/accordion/accordion.directive.ts ***!
@@ -1579,14 +1885,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var AccordionDirective = /*#__PURE__*/function () {
       function AccordionDirective(router) {
-        var _this6 = this;
+        var _this9 = this;
 
         _classCallCheck(this, AccordionDirective);
 
         this.router = router;
         this.navlinks = [];
         setTimeout(function () {
-          return _this6.checkOpenLinks();
+          return _this9.checkOpenLinks();
         });
       }
 
@@ -1616,17 +1922,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "checkOpenLinks",
         value: function checkOpenLinks() {
-          var _this7 = this;
+          var _this10 = this;
 
           this.navlinks.forEach(function (link) {
             if (link.group) {
-              var routeUrl = _this7.router.url;
+              var routeUrl = _this10.router.url;
               var currentUrl = routeUrl.split('/');
 
               if (currentUrl.indexOf(link.group) > 0) {
                 link.selected = true;
 
-                _this7.closeOtherLinks(link);
+                _this10.closeOtherLinks(link);
               }
             }
           });
@@ -1634,12 +1940,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ngAfterContentChecked",
         value: function ngAfterContentChecked() {
-          var _this8 = this;
+          var _this11 = this;
 
           this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (event) {
             return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"];
           })).subscribe(function (e) {
-            return _this8.checkOpenLinks();
+            return _this11.checkOpenLinks();
           });
         }
       }]);
@@ -2148,7 +2454,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var SpinnerComponent = /*#__PURE__*/function () {
       function SpinnerComponent(router, document) {
-        var _this9 = this;
+        var _this12 = this;
 
         _classCallCheck(this, SpinnerComponent);
 
@@ -2158,12 +2464,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.backgroundColor = 'rgba(0, 115, 170, 0.69)';
         this.router.events.subscribe(function (event) {
           if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
-            _this9.isSpinnerVisible = true;
+            _this12.isSpinnerVisible = true;
           } else if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationCancel"] || event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
-            _this9.isSpinnerVisible = false;
+            _this12.isSpinnerVisible = false;
           }
         }, function () {
-          _this9.isSpinnerVisible = false;
+          _this12.isSpinnerVisible = false;
         });
       }
 
@@ -2342,7 +2648,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\shala\Documents\GitHub\MyCity\repo-copied\src\main.ts */
+    /*! C:\Users\shala\Documents\GitHub\MyCity\WebAppRepo\src\main.ts */
     "./src/main.ts");
     /***/
   }
