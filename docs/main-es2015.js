@@ -848,6 +848,14 @@ class DataProviderService {
     parseFirebaseItem(item, id) {
         console.log("⚪ fire db item: ", item);
         console.log("_________\n\n");
+        let location;
+        if (item.lon && item.lon[0] &&
+            item.lat && item.lat[0]) {
+            location = {
+                lon: item.lon[0],
+                lat: item.lat[0],
+            };
+        }
         let model = {
             fullText: item.info,
             shortText: `${item.info.substring(0, 120)} ...`,
@@ -871,7 +879,8 @@ class DataProviderService {
             price: item.price,
             site: item.site,
             street: item.street,
-            time: item.time
+            time: item.time,
+            location: location
         };
         return model;
     }

@@ -1358,6 +1358,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function parseFirebaseItem(item, id) {
           console.log("⚪ fire db item: ", item);
           console.log("_________\n\n");
+          var location;
+
+          if (item.lon && item.lon[0] && item.lat && item.lat[0]) {
+            location = {
+              lon: item.lon[0],
+              lat: item.lat[0]
+            };
+          }
+
           var model = {
             fullText: item.info,
             shortText: "".concat(item.info.substring(0, 120), " ..."),
@@ -1379,7 +1388,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             price: item.price,
             site: item.site,
             street: item.street,
-            time: item.time
+            time: item.time,
+            location: location
           };
           return model;
         }
