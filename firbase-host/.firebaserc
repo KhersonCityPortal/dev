@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "moemisto-ks-ua"
+  },
+  "targets": {
+    "my-city-problems": {
+      "hosting": {
+        "moemisto-ks-ua.web.app": [
+          "moemisto-ks-ua"
+        ]
+      }
+    }
+  }
+}

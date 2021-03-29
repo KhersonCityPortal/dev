@@ -1,0 +1,36 @@
+.input-userchild--name{
+    @extend .c-form-control;
+    font-weight: 700;
+    border: 1px solid $light-blue;
+  
+  }
+  
+  .input-userchild--wrap{
+    &:before {
+      content: $icon-pencil;
+      font-family: $icomoon-font-family;
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      border: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: $blue;
+  
+      @include media(">=medium") {
+        right: 22px;
+      }
+      @include media(">=xlarge") {
+        right: 19px;
+      }
+    }
+  }
+
+  .child-name--wrap{
+    border: 1px solid $light-blue;
+    padding: 1rem;
+    width: 100%;
+    i{
+      margin-left: 2rem;
+    }
+  }
