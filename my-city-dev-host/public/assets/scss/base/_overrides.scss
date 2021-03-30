@@ -1,0 +1,28 @@
+
+
+.modal-lg{
+  @include media(">=xlarge") {
+    max-width: 950px;
+  }
+}
+
+.c-modal-body{
+  max-height: calc(100vh - 400px);
+
+  @media screen and (max-height: 600px) {
+      max-height: fit-content;
+  }
+}
+
+.modal-content{
+  border-radius: 20px;
+}
+
+.modal-body {
+  padding: 0rem 1rem 0rem 1rem
+}
+
+.c-datepicker{
+  width: none;
+  height: none;
+}

@@ -1,0 +1,46 @@
+.datepicker {
+  @extend .c-form-control;
+  cursor: pointer;
+
+  + .dropdown-menu.show {
+    left: -1px;
+    right: -1px;
+    margin-top: 0;
+    box-shadow: 0 -5px 13px rgba(25, 27, 28, .15);
+    border-color: transparent;
+    transform: translate(0, -100%) !important;
+  }
+}
+
+.ngb-dp-content.ngb-dp-months {
+  display: block;
+
+  .ngb-dp-day,
+  .ngb-dp-weekday {
+    width: calc(100% / 7);
+  }
+
+  [ngbDatepickerDayView] {
+    width: auto;
+  }
+}
+
+.datepicker-wrap {
+  &:before {
+    content: $icon-calendar;
+    font-family: $icomoon-font-family;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    border: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @include media(">=medium") {
+      right: 22px;
+    }
+    @include media(">=xlarge") {
+      right: 19px;
+    }
+  }
+}

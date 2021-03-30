@@ -1,0 +1,80 @@
+.intro__inner {
+  position: relative;
+  z-index: 10;
+}
+
+.intro__inner-indent {
+  padding-top: 80px;
+  padding-bottom: 60px;
+
+  @include media(">=medium") {
+    padding-top: 90px;
+  }
+
+  @media screen and (min-width: 1350px) {
+    padding-top: 100px;
+  }
+}
+
+.intro__inner-indent--small {
+  padding-top: 75px;
+  padding-bottom: 40px;
+
+  @include media(">=medium") {
+    padding-top: 90px;
+  }
+
+  @media screen and (min-width: 1350px) {
+    padding-top: 100px;
+  }
+}
+
+.intro__inner-indent--large {
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  @include media(">=medium") {
+    padding-top: 110px;
+  }
+  @media screen and (min-width: 1350px) {
+    padding-top: 170px;
+    padding-bottom: 200px;
+  }
+}
+
+.intro__inner--vertical-align {
+  min-height: calc(100vh - #{map_get($footer-height, "xs")});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media(">=medium") {
+    min-height: calc(100vh - #{map_get($footer-height, "md")});
+  }
+  @include media(">=xlarge") {
+    min-height: calc(100vh - #{map_get($footer-height, "xl")});
+  }
+}
+
+.intro__text-holder {
+  margin-bottom: 40px;
+  // max-width: 310px;
+  // @include media(">=xlarge") {
+  //   max-width: 410px;
+  // }
+}
+
+.intro__img-holder {
+  margin-bottom: 40px;
+  @include media(">=medium") {
+    max-width: 561px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1350px) {
+    max-width: 650px;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+  }
+}
