@@ -31,10 +31,16 @@ main {
     padding: 0 map_get($grid-md, "grid-margins");
   }
 
+  @media (min-width: map_get($breakpoint, "medium")) {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
   @media (min-width: map_get($breakpoint, "xlarge")) {
     max-width: 1090px;
     margin: 0 auto;
   }
+
 }
 
 .body--bg {
@@ -42,6 +48,8 @@ main {
 }
 
 .main-title {
+  margin: 0px !important;
+  margin-bottom: 2.5rem !important;
   // max-width: 300px;
   font-size: 40px;
   @include media(">=medium") {

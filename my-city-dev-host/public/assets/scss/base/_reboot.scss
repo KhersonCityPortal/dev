@@ -278,3 +278,8 @@ legend {
   font: inherit; // 2
   -webkit-appearance: button; // 1
 }
+
+.shadow-anim {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
